@@ -1,0 +1,13 @@
+{
+  "name": "sunny-day-mascot",
+  "description": "A sunny-day theme for the Claude desktop app, with the orange mascot playing outside.",
+  "owner": {
+    "name": "richyuen"
+  },
+  "plugins": [
+    {
+      "name": "sunny-day-mascot",
+      "source": "./"
+    }
+  ]
+}
