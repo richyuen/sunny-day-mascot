@@ -27,6 +27,8 @@ In the desktop app, where `/plugin` does not run: click + next to the prompt box
 - `hooks/register.tsx` sets the theme at session start: a colour palette built with `make-colors.js` and a backdrop scene.
 - `hooks/scene.ts` is the scene: one SVG animated with CSS `@keyframes`.
 
-The desktop app draws a backdrop as a still picture if its SVG contains `@media (max-aspect-ratio: ...)` rules, and it does not run SVG animation tags such as `<animate>`. Keep to CSS animation and a `prefers-reduced-motion` media query.
+The mascots sit in the outer strips of one 1320 x 1000 picture, scaled to fit the window, so on a window about 1320 px wide or wider they stay clear of the frosted chat column; the sky and hills run past the picture to fill any window.
+
+The desktop app draws a backdrop as a still picture if its SVG contains `@media (max-aspect-ratio: ...)` rules, draws nested `<svg>` layers blank, and does not run SVG animation tags such as `<animate>`. Keep to one root `<svg>`, CSS animation and a `prefers-reduced-motion` media query.
 
 `hooks/make-colors.js` and `hooks/make-colors.d.ts` are the palette helper that Claude Code's mod-authoring guide asks mods to copy in unchanged.

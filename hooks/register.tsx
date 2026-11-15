@@ -34,11 +34,10 @@ export const register: Register = on => {
     if (unpainted !== undefined) {
       $.ui.toast(unpainted)
     }
-    const set = await $.theme.set(LOOK)
-
-    if (!set.isDrawn) {
-      $.ui.status(set.reason)
-    }
+    // `isDrawn` is false whenever no app is attached yet (a terminal, or a reload
+    // between turns); the app draws the theme when it attaches, so say nothing.
+    await $.theme.set(LOOK)
+    $.ui.status(undefined)
 
     return next(e)
   })
